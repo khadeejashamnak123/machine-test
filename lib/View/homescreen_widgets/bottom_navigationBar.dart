@@ -16,7 +16,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
   List screen = [const HomeScreen(), const HomeScreen(), const HomeScreen()];
 
   ValueNotifier<int> screenValue = ValueNotifier(0);
-
+  @override
+  void initState() {
+    super.initState();
+    // Call your function here to execute it automatically when the app opens
+    getSubjectDetails() ;
+  }
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -131,7 +136,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
                                 ),
                                 InkWell(
                                   onTap: () {
-                                    getSubjectDetails();
                                     screenValue.value = 1;
                                   },
                                   child: Column(

@@ -8,7 +8,7 @@ import 'package:machine_test_app/Model/subject_details_mode.dart';
 List<SubjectDetailsModel> subjectDetailsList = [];
 List<FeedBackModel> dataList = [];
 
-Future getSubjectDetails() async {
+ getSubjectDetails() async {
   final response = await http.get(Uri.parse(
       'http://api.mapyourvehicle.com/WeatherForecast/SubjectDetails'));
   print(response.body);
